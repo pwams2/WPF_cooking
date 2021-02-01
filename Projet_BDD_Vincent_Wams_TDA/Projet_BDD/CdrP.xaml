@@ -1,0 +1,75 @@
+﻿<Window x:Class="Projet_BDD.CdrP"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDD"
+        mc:Ignorable="d"
+        Title="CdrP" Height="550" Width="800">
+    <Grid>
+        <TabControl TabStripPlacement="Top" >
+            <TabItem Header="Ajouter une recette" >
+                <Grid Background="Beige">
+                    <Label Content="Information à propos de la recette :" FontWeight="Bold"  Margin="0.4,0.4,551.6,431.6" />
+                    <Label Content="Nom : " Margin="10,34,718,425" FontWeight="Bold"/>
+                    <TextBox x:Name="nom" Padding="2" Margin="70,34,589,425"/>
+                    <Label Content="Type : " Margin="10,92,718,368" FontWeight="Bold"/>
+                    <ComboBox x:Name="type" Margin="70,90,589,369" IsEditable="True" >
+                        <ComboBoxItem Content="Entrée"/>
+                        <ComboBoxItem Content="Plat"/>
+                        <ComboBoxItem Content="Dessert"/>
+                    </ComboBox>
+                    <Label Content="Descriptif : " Margin="10,131,700,328" FontWeight="Bold"/>
+                    <TextBox x:Name="descriptif" Padding="2" Margin="22,164,485,171" AcceptsReturn="True" TextWrapping="Wrap"/>
+                    <Label Content="Prix : " Margin="10,338,718,121" FontWeight="Bold"/>
+                    <TextBox x:Name="prix" Padding="2" Margin="70,338,589,121"/>
+
+                    <Label Content="Ingrédients nécessaire : " FontWeight="Bold" Margin="367,0,271,458.8"/>
+                    <Button x:Name="Valider" Click="Valider_Click" Content="Valider la recette" Margin="613,437,25,28.8"/>
+                    <Label Content="Ingrédient 1 :" Margin="323,34,356,425.8"/>
+                    <ComboBox x:Name="Ing1" Padding="2" Margin="414,39,245,420" ItemsSource="{Binding ingredients}" IsEditable="True"/>
+                    <Label Content="Ingrédient 2 :" Margin="323,92,356,368"/>
+                    <ComboBox x:Name="Ing2" Padding="2" Margin="414,92,245,367" ItemsSource="{Binding ingredients}" IsEditable="True"/>
+                    <Label Content="Ingrédient 3 :" Margin="323,143,356,313"/>
+                    <ComboBox x:Name="Ing3" Padding="2" Margin="414,143,245,316" ItemsSource="{Binding ingredients}" IsEditable="True"/>
+                    <Label Content="Ingrédient 4 :" Margin="323,196,356,265"/>
+                    <ComboBox x:Name="Ing4" Padding="2" Margin="414,194,245,265" ItemsSource="{Binding ingredients}" IsEditable="True"/>
+                    <Label Content="Ingrédient 5 :" Margin="323,242,356,219"/>
+                    <ComboBox x:Name="Ing5" Padding="2" Margin="414,242,245,217" ItemsSource="{Binding ingredients}" IsEditable="True"/>
+                    <Label Content="Ingrédient 6 :" Margin="323,288,356,173"/>
+                    <ComboBox x:Name="Ing6" Padding="2" Margin="414,288,245,171" ItemsSource="{Binding ingredients}" IsEditable="True"/>
+                    <Label Content="Ingrédient 7 :" Margin="323,332,356,129"/>
+                    <ComboBox x:Name="Ing7" Padding="2" Margin="414,332,245,127" ItemsSource="{Binding ingredients}" IsEditable="True" />
+                    <Label Content="Ingrédient 8 :" Margin="323,375,356,79" RenderTransformOrigin="0.491,0.791"/>
+                    <ComboBox x:Name="Ing8" Padding="2" Margin="414,375,245,84" ItemsSource="{Binding ingredients}" IsEditable="True"/>
+
+                    <Label Content="Quantités nécessaire : " FontWeight="Bold" Margin="562,0,76,459"/>
+                    <TextBox x:Name="Q1" Padding="2" Margin="594,39,131,420" Text="0"/>
+                    <TextBox x:Name="Q2" Padding="2" Margin="594,93,131,366" Text="0"/>
+                    <TextBox x:Name="Q3" Padding="2" Margin="594,143,131,316" Text="0"/>
+                    <TextBox x:Name="Q4" Padding="2" Margin="594,194,131,265" Text="0"/>
+                    <TextBox x:Name="Q5" Padding="2" Margin="594,242,131,217" Text="0" />
+                    <TextBox x:Name="Q6" Padding="2" Margin="594,288,131,171" Text="0"/>
+                    <TextBox x:Name="Q7" Padding="2" Margin="594,332,131,127" Text="0"/>
+                    <TextBox x:Name="Q8" Padding="2" Margin="594,375,131,84" Text="0"/>
+                    <Button x:Name="RetourAccueil" Click="RetourAccueil_Click" Content="Retour vers la page d'accueil" Margin="31,435,575,26"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Details" >
+                <Grid Background="Beige">
+                    <Label Content=" Détail de votre compte :  " FontWeight="Bold" Margin="10,10,573,439"/>
+                    <Label Content=" Votre identifiant :  " FontWeight="Bold" Margin="546,10,122,439"/>
+                    <TextBox x:Name="id" Padding="2" Margin="671,10,9,439" Background="Beige" FontWeight="Bold" IsReadOnly="True" BorderThickness="0" />
+                    <Label Content="Détail de vos recettes :" FontWeight="Bold" Margin="18,92,573,363" />
+                    <DataGrid Name="Data" HorizontalAlignment="Left" Height="139" Margin="49,129,0,0" VerticalAlignment="Top" Width="326" AlternatingRowBackground="LightBlue" AlternationCount="2" Background="Beige" IsReadOnly="True"/>
+
+                    <Button x:Name="Affichage" Click="Affichage_Click" Content="Affichage" HorizontalAlignment="Left" Margin="70,293,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Label Content="Si vous voulez acceder à la page de commande : " Margin="380,92,122,363"/>
+                    <Button x:Name="CommandePlat" Click="CommandePlat_Click" Content="Commander un plat" Background="Beige" Margin="476,129,122,323"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

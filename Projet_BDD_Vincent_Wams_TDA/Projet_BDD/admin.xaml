@@ -1,0 +1,75 @@
+﻿<Window x:Class="Projet_BDD.admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDD"
+        mc:Ignorable="d"
+        Title="admin" Height="550" Width="800">
+    <Grid>
+        <TabControl TabStripPlacement="Top" >
+
+            <TabItem Header="Tableau de bord" >
+                <Grid Background="Beige">
+                    <Label Content="Tableau de bord :" Margin="0,0,651,461"  FontWeight="Bold"/>
+                    <Label Content="Le Cdr de la semaine : " Margin="30,31,626,413" FontWeight="Bold"/>
+                    <Label Content="Top 5 recettes : " Margin="30,144,626,300" FontWeight="Bold"/>
+                    <TextBox x:Name="MeilleurCdr" Margin="39,64,572,380" Background="Beige" />
+                    <Button x:Name="Resultat" Click="Resultat_Click" Content="Résultats" Margin="30,417,603,39"/>
+                    <DataGrid Name="TopRecette" HorizontalAlignment="Left" Height="216" Margin="30,179,0,0" VerticalAlignment="Top" Width="204" AlternatingRowBackground="LightBlue" AlternationCount="2" Background="Beige" IsReadOnly="True"/>
+                    <Label Content="Liste des recettes disponible :" Margin="338,31,273,425"/>
+                    <ListBox Name="liste" HorizontalAlignment="Left" Height="253" VerticalAlignment="Top" Width="182" Margin="381,64,0,0" Background="Beige" SelectionMode="Single"/>
+                    <Button x:Name="AffichageRecette" Click="AffichageRecette_Click" Content="Afficher les recettes" Margin="381,335,225,126"/>
+                    <Button x:Name="SupprimerRecette" Click="SupprimerRecette_Click" Content="Supprimer la recette" Margin="381,375,225,86"/>
+                    <ListBox Name="listeCdr" HorizontalAlignment="Left" Height="253" VerticalAlignment="Top" Width="182" Margin="586,64,0,0" Background="Beige" SelectionMode="Single"/>
+                    <Button x:Name="AffichageCdr" Click="AffichageCdr_Click" Content="Afficher les Cdr" Margin="586,335,20,126"/>
+                    <Button x:Name="SupprimerCdr" Click="SupprimerCdr_Click" Content="Supprimer un Cdr" Margin="586,375,20,86"/>
+                    <Button x:Name="RetourAccueil" Click="RetourAccueil_Click" Content="Retour vers la page d'accueil" Margin="586,433,20,28"/>
+                    
+                </Grid>
+            </TabItem>
+
+            
+
+            <TabItem Header="Ajouter un produit" >
+                <Grid Background="Beige">
+                    <Label Content="Ajouter un produit dans la liste : " Margin="0,0,590,457"/>
+                    <Label Content="Nom* : " Margin="10,45,709,412" RenderTransformOrigin="0.378,1.383"/>
+                    <TextBox  x:Name="nomproduit" Margin="63,40,570,412"/>
+                    <Label Content="Categorie* : " Margin="10,103,709,354" RenderTransformOrigin="0.378,1.383"/>
+                    <ComboBox x:Name="categorieproduit" Margin="84,103,575,356" IsEditable="True" >
+                        <ComboBoxItem Content="viande"/>
+                        <ComboBoxItem Content="poisson"/>
+                        <ComboBoxItem Content="légume"/>
+                        <ComboBoxItem Content="épicerie"/>
+                        <ComboBoxItem Content="chocolat"/>
+                        <ComboBoxItem Content="laitier"/>
+                    </ComboBox>
+                    <Label Content="Stock actuel* : " Margin="10,167,686,290" RenderTransformOrigin="0.378,1.383"/>
+                    <TextBox x:Name="stockactuel" Margin="102,157,530,290"/>
+                    <Label Content="Stock minimal* : " Margin="10,251,686,206" RenderTransformOrigin="0.378,1.383"/>
+                    <TextBox x:Name="stockmin" Margin="102,241,530,206"/>
+                    <Label Content="Stock maximum* : " Margin="10,339,659,118" RenderTransformOrigin="0.378,1.383"/>
+                    <TextBox x:Name="stockmax" Margin="134,329,498,118"/>
+                    <Label Content="Reference* : " Margin="10,393,659,64" RenderTransformOrigin="0.378,1.383"/>
+                    <TextBox x:Name="refe" Margin="134,393,498,54"/>
+                    <Label Content="Unite Produit* : " Margin="237,45,432,412" RenderTransformOrigin="0.378,1.383"/>
+                    <ComboBox x:Name="unitepro" Margin="374,45,258,412">
+                        <ComboBoxItem Content="g"/>
+                        <ComboBoxItem Content="cL"/>
+                        <ComboBoxItem Content="u"/>
+
+                    </ComboBox>
+                    <Label Content="1: Epicerie " Margin="343,379,365,78"/>
+                    <Label Content="2: Primeur " Margin="343,414,365,39"/>
+                    <Label Content="3: Boucher " Margin="343,442,365,19"/>
+                    <Label Content="4: Produit laitier " Margin="428,379,245,77"/>
+                    <Label Content="5: Chocolatier " Margin="428,410,266,50"/>
+                    <Label Content="6: Poissonnier " Margin="428,442,266,19"/>
+                    <Button x:Name="AjourProduit" Click="AjourProduit_Click" Content="Ajouter" Margin="620,442,39,21"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

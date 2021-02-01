@@ -1,0 +1,22 @@
+﻿<Window x:Class="Projet_BDD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+ <!--Première page : avec 3 boutons : soit pour accéder à la page administrateur soit à la page de connexion pour un client ou un cdr soit à la page "démo"-->   
+    
+    <Grid  Background="Beige">
+        <Label Content="Bienvenue sur Cooking" FontSize="20" FontWeight="Bold" Margin="250,20,249.6,442.8"/>
+        <TextBlock Text="Chez Cooking, nous vous proposons de bons petits plats préparés par nos cuisiners et livrés par vélo directement chez vous !
+Envie de nous partager vos délicieuses créations tout en gagnant des cook ? Aucun problème, inscrivez-vous en Créateur de Recettes (CdR) !
+Nous les intégrerons à notre livre de cuisine virtuel pour ravir les papilles du plus grand nombre.
+A très vite chez Cooking !" TextWrapping="WrapWithOverflow" 
+                   Margin="31,105,34.6,320.8" FontSize="14" FontStyle="Italic"/>
+        <Button x:Name="admin" Click="Admin_Click" Content="Gestionnaire Cooking (admin)" Margin="250,357,344.6,114.8"/>
+        <Button x:Name="Client" Click="Client_Click" Content="Client ou Créateur de recette" Margin="250,285,344.6,186.8"/>
+        <Button x:Name="Demo" Click="Demo_Click" Content="Démo" Margin="250,429,344.6,42.8"/>
+    </Grid>
+</Window>

@@ -1,0 +1,114 @@
+﻿<Window x:Class="Projet_BDD.CreationCompte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDD"
+        mc:Ignorable="d"
+        Title="CreationCompte" Height="550" Width="800">
+
+    <Border Padding="10" Background="Beige">
+        <StackPanel>
+
+
+
+            <TextBlock Text="Information Client :" FontWeight="Bold" Margin="0 10" />
+
+
+
+            <!-- Nom /Prenom -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                    <TextBlock Text="Nom :" />
+                    <TextBox x:Name="nom1" Padding="2" />
+                </StackPanel>
+
+
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Prenom :" />
+                    <TextBox x:Name="prenom1" Padding="2" />
+                </StackPanel>
+
+
+            </Grid>
+
+            <TextBlock Text="Identifiant* : " />
+            <TextBox x:Name="Id"  Padding="2"  />
+
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                    <TextBlock Text="Mot de passe* :" />
+                    <PasswordBox x:Name="mdp1" Padding="2" />
+                </StackPanel>
+
+
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Confirmer le mot de passe* :" />
+                    <PasswordBox x:Name="mdp2" Padding="2" />
+                </StackPanel>
+
+
+            </Grid>
+
+
+
+            <TextBlock Text="Information adresse de livraison :" FontWeight="Bold" Margin="0 10" />
+
+
+            <TextBlock Text="Adresse :" Margin="0 0 0 10" />
+            <TextBox x:Name="adresse1" Padding="2" />
+
+
+
+            <TextBlock Text="Ville :" />
+            <TextBox x:Name="ville1"  Padding="2" />
+
+
+            <TextBlock Text="Code postal* :" />
+            <TextBox x:Name="codepostal1" Padding="2" />
+
+
+            <TextBlock Text="Numéro de téléphone* :" />
+            <TextBox x:Name="telephone1" Padding="2" />
+
+
+            <!-- Info pour le livreur -->
+            <TextBlock Text="Information utile pour le livreur (code immeuble, étage,..) : " />
+            <TextBox x:Name="info1" Padding="5" />
+
+            <!-- Bouton Valider/ Annuler -->
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Voulez-vous etre un créateur de recette :" Padding="4"/>
+                <TextBlock Text="Ajoutez un solde :" Padding="4" Grid.ColumnSpan="2" Margin="387,5,280.6,53.4" />
+                <TextBox x:Name="solde" Padding="4" Margin="127.8,15,150.6,53.4" Grid.Column="1" Text="0" />
+                <Button x:Name="AnnulerButton" Click="AnnulerButton_Click" Margin="100,68,25.2,0.4" Grid.Column="0" Content="Annuler" />
+
+                <Button x:Name="Valider" Click="Valider_Click"  Margin="24.8,68,99.6,0.4" Grid.Column="1" Content="Valider" />
+                <CheckBox x:Name="Check" IsChecked="False" Content="Oui" HorizontalAlignment="Left" Margin="238,10,0,0" VerticalAlignment="Top"/>
+                <CheckBox Content="Non" HorizontalAlignment="Left" Margin="323,10,0,0" VerticalAlignment="Top"/>
+
+            </Grid>
+
+        </StackPanel>
+    </Border>
+</Window>
